@@ -4,24 +4,20 @@ const controller = {
     allJokes : (req, res)=> {
         res.json({data});
     },
-
     findJoke: (req, res)=> {
         const groupe = req.params.groupe;
 
         const result = data.filter( carambarJokes => carambarJokes.id == groupe);
 
-        // console.log(result);
         if (result.length == 0 ){
             res.json({message : "blague introuvable "});
-
         }
         else{
             res.json({result});
-
         }
     },
     randomJoke : (req, res) =>{
-        const numMax =data.length;
+        const numMax = data.length;
 
         const number = getRandomInt(numMax);
 

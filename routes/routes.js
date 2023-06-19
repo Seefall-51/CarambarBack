@@ -1,4 +1,3 @@
-//instance de express
 const express = require("express");
 const router = express.Router();
 const controller = require("../controllers/index")
@@ -22,13 +21,13 @@ router.use(function (req, res, next) {
   next();
 });
 
-//retourne la liste de tout les joueurs
+//retourne la liste de tout les blagues
 router.get('/allJokes', controller.allJokes);
 
-// cherche un joueur selon un param équipe
+// cherche une blague selon un param groupe
 router.get('/findJoke/:groupe', controller.findJoke);
 
-//retourne un joueur au hasard
-router.get('/randomJoke',controller.randomJoke);
+//retourne une blague au hasard
+router.get('/randomJoke', controller.randomJoke);
 
 module.exports = router
